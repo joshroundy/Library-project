@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 nav {
     height: 80px;
     display: flex;
@@ -19,6 +23,15 @@ img {
 .p {
     line-height: 1.5;
 }
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 .nav__container {
     width: 100%;
     min-width: 1200px;
@@ -65,6 +78,60 @@ li {
 .nav__link--primary:hover {
     text-decoration: none;
 }
+
+.btn__menu {
+    border-color: transparent;
+    font-size: 40px;
+    text-align: center;
+    border: none;
+    color: #7342d6;
+}
+
+.menu__backdrop {
+    position: absolute;
+    background-color: #242424;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.menu--open .menu__backdrop {
+    display: flex;
+}
+
+.menu__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__list {
+    padding: 32px 0;
+}
+
+.menu__link {
+    font-size: 40px;
+    color: white;
+}
+
+.btn__menu--close {
+    position: absolute;
+    right: 20px;
+    top: 10pc;
+    padding: 8px;
+    color: white;
+}
+/*
+
+LANDING
+
+*/
 
 #landing {
     background-color: rgba(115, 66, 214, 0.1);
@@ -133,6 +200,16 @@ button:active {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.row__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.no-cursor {
+    cursor: not-allowed;
 }
 
 /*
@@ -223,6 +300,7 @@ FEATURES
 
 .books {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .book {
@@ -266,4 +344,52 @@ FEATURES
     text-decoration: line-through;
     padding-right: 6px;
     color: #bfbfbf;
+}
+
+/* 
+
+Explore
+
+*/
+
+#explore {
+    background-color:rgba(115, 66, 214, 0.1);
+}
+
+/* 
+
+FOOTER
+
+*/
+
+footer {
+    background-color:#242424;
+}
+
+.footer__logo {
+    display: flex;
+}
+
+.footer__logo--img {
+    width: 160px;
+    filter: grayscale(1) invert(1);
+}
+
+.footer__link,
+.footer__copyright {
+    color: #fff;
+}
+
+.foooter__list {
+    margin-bottom: 20px 0 24px 0;
+}
+
+.footer__link {
+    padding: 0 8px;
+}
+
+@media (max-width: 550px) {
+    .nav__links {
+        display: none;
+    }
 }
